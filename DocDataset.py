@@ -1,3 +1,12 @@
+import os
+import cv2
+import numpy as np
+from skimage import io
+import glob
+from skimage.color import gray2rgb
+import torch
+from torch.utils.data import Dataset
+
 class DocDataset(Dataset):
     def __init__(self, origin, classes, img_size, grayscale=False):
         self.items = []

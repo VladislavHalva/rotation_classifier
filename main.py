@@ -83,7 +83,7 @@ def main():
             filestats_stdout=False, 
             logdir=args.logdir
         )
-    else:
+    else:        
         # predict
         trainer = Trainer(
             device = device, 
@@ -93,11 +93,7 @@ def main():
             experiments_dir=args.logdir, 
             verbose=True
         )
-        trainer.setup_val_loader(
-            valset_origin = args.evalset, 
-            batch_size = args.batch_size, 
-            shuffle = True
-        )
+        
         if args.load_model is not None:
             trainer.init_model(load_state_dict=args.load_model)
         else:
